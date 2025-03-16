@@ -97,7 +97,7 @@ body, html, #app {
   padding: 20px;
 }
 
-/* 修正 ElTable 標題顯示 */
+/* ElTable 標題顯示 */
 .el-table__header-wrapper th {
   background-color: var(--table-header-bg) !important;
   color: var(--table-header-text) !important;
@@ -132,7 +132,7 @@ body, html, #app {
   background: var(--table-hover-bg) !important;
 }
 
-/* 🔹 美化滾動條 */
+/* 美化滾動條 */
 ::-webkit-scrollbar {
   width: 8px;
 }
