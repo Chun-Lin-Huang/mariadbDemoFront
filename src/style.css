@@ -97,7 +97,7 @@ body, html, #app {
   padding: 20px;
 }
 
-/* 🔹 修正 ElTable 標題顯示 */
+/* 修正 ElTable 標題顯示 */
 .el-table__header-wrapper th {
   background-color: var(--table-header-bg) !important;
   color: var(--table-header-text) !important;
@@ -115,7 +115,7 @@ body, html, #app {
   visibility: visible !important;
 }
 
-/* 🔹 修正表格邊框 */
+/* 修正表格邊框 */
 .el-table {
   border: 1px solid var(--table-border);
   border-radius: var(--border-radius);
@@ -146,7 +146,7 @@ body, html, #app {
   background: var(--scrollbar-track);
 }
 
-/* 🔹 深色模式 */
+/* 深色模式 */
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: #1e1e1e;
