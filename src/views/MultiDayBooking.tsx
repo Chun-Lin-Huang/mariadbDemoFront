@@ -28,10 +28,14 @@ export default defineComponent({
         });
         ElMessage.success("預約成功！");
         fetchMultiDayReservations();
-      } catch (err) {
-        ElMessage.error("新增預約失敗！");
+      } catch (err: any) {
+        if (err.message.includes("409")) {
+          ElMessage.warning("此座位與時段已被預約！");
+        } else {
+          ElMessage.error("新增預約失敗！");
+        }
       }
-    };
+    };    
 
     onMounted(() => {
       fetchMultiDayReservations();

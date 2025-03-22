@@ -17,29 +17,30 @@ export async function asyncGet(api: string) {
 export async function asyncPost(api: string, body: {} | FormData) {
     const res: Response = await fetch(api, {
         method: 'POST',
-        headers:new Headers({
-            'Access-Control-Allow-Origin':"http://localhost:5173/",
-            'content-Type':"application/json"
+        headers: new Headers({
+            'Access-Control-Allow-Origin': "http://localhost:5173/",
+            'content-Type': "application/json"
         }),
-        body: body instanceof FormData?body:JSON.stringify(body),
-        mode:"cors"
+        body: body instanceof FormData ? body : JSON.stringify(body),
+        mode: "cors"
     })
-    try {
-        let data = res.json()
-        return data
-    } catch (error) {
-        console.log(error)
+
+    if (!res.ok) {
+        const errorText = await res.text();
+        throw new Error(`${res.status} ${errorText}`);
     }
+
+    return res.json();
 }
 
 export async function asyncPatch(api: string, body: {} | FormData) {
     const res: Response = await fetch(api, {
         method: 'PATCH',
-        headers:new Headers({
-            'Access-Control-Allow-Origin':"http://localhost:5173/",
+        headers: new Headers({
+            'Access-Control-Allow-Origin': "http://localhost:5173/",
         }),
-        body: body instanceof FormData?body:JSON.stringify(body),
-        mode:"cors"
+        body: body instanceof FormData ? body : JSON.stringify(body),
+        mode: "cors"
     })
     try {
         let data = res.json()
