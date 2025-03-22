@@ -1,5 +1,5 @@
 import { defineComponent, ref, onMounted } from "vue";
-import { ElInput, ElSelect, ElOption, ElDatePicker, ElButton, ElTable, ElTableColumn, ElMessage } from "element-plus";
+import { ElInput, ElDatePicker, ElButton, ElTable, ElTableColumn, ElMessage } from "element-plus";
 import { asyncGet, asyncPost } from "../utils/fetch";
 import { apis } from "../enum/api";
 import "../style/style.css";
